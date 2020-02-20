@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parents[1]
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #my apps
     'gallery.apps.GalleryConfig',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -120,4 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = Path.resolve(BASE_DIR,'media')
+#MEDIA_ROOT = Path.resolve(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
